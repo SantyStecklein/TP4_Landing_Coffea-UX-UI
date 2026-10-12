@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Componente: Newsletter (Sección 5.8)
+   ========================================================================== */
+
+.newsletter {
+  position: relative;
+  background-color: var(--color-sand);
+  padding-block: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter__img {
+  position: absolute;
+  top: 0; /* Anclado al borde superior */
+  z-index: 1;
+  pointer-events: none;
+  width: auto;
+  max-width: 25%;
+  height: 100%; /* FIX: 100% estricto para cubrir toda la altura de la sección sin dejar márgenes arriba/abajo */
+  object-fit: cover; /* Evita deformaciones y permite un llenado correcto */
+}
+
+.newsletter__img--left { 
+  left: 0; 
+  object-position: left center;
+}
+.newsletter__img--right {
+  right: 0;
+  transform: scaleX(-1);
+  transform-origin: center;
+  object-position: left center; /* Al estar espejada, object-position 'left' muestra el borde original que no está cortado */
+}
+
+.newsletter__container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: 630px;
+}
+
+.newsletter__title {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-8);
+}
+
+.newsletter__desc {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-40);
+}
+
+.newsletter__form {
+  display: flex;
+  gap: var(--space-16);
+  justify-content: center;
+  width: 100%;
+}
+
+.newsletter__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.newsletter__icon {
+  position: absolute;
+  left: 24px;
+  pointer-events: none; /* Para que no bloquee el click en el input */
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: 16px 24px 16px 56px; /* 56px a la izquierda para dejar espacio al ícono */
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-espresso);
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-text-soft);
+}
+
+.newsletter__input:focus-visible {
+  border-color: var(--color-espresso);
+  outline: none;
+}
+
+.newsletter__btn {
+  background-color: var(--color-espresso);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  padding: 16px 40px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.newsletter__btn:hover,
+.newsletter__btn:focus-visible {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}

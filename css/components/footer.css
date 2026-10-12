@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Componente: Footer (Sección 5.9)
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-espresso);
+  color: var(--color-sand);
+  padding-top: var(--space-56);
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-40);
+  padding-bottom: var(--space-56);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+/* Columna de Marca */
+.footer__brand {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-logo);
+  color: var(--color-white);
+  text-transform: lowercase;
+}
+
+.footer__socials {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* Columnas de Enlaces y Contacto */
+.footer__title {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-footer-h);
+  color: var(--color-white);
+  margin-bottom: var(--space-24);
+}
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.footer__link {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-sand);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  opacity: 1;
+  color: var(--color-white);
+}
+
+.footer__address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-sand);
+  opacity: 0.8;
+}
+
+.footer__email-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}

@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Componente: Promo CTA (Sección 5.6)
+   ========================================================================== */
+
+/* R1: Franja de 335 px, fondo --color-sand */
+.promo {
+  position: relative;
+  background-color: var(--color-sand);
+  height: 335px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Evita desbordes de las imágenes laterales absolutas */
+}
+
+/* R1: Imágenes laterales decorativas */
+.promo__img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; /* Previene que bloqueen clics */
+  max-width: 520px; /* FIX: Ancho máximo fijo basado en el export de Figma */
+  width: 32%; /* FIX: Ancho fluido en pantallas chicas */
+  height: auto; /* Mantener proporción */
+}
+
+/* Modificamos el posicionamiento relativo de las imágenes */
+.promo__img--left {
+  left: 0;
+  object-position: left center;
+}
+
+.promo__img--right {
+  right: 0;
+  object-position: right center;
+}
+
+/* Contenedor principal alineado estrictamente a la izquierda para el texto */
+.promo__container {
+  display: flex;
+  justify-content: flex-start; /* Alinea todo a la izquierda */
+  padding-left: 354px; /* FIX: Valor exacto calculado para alinear con la segunda card del carrusel */
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Asegura que el contenido quede por encima de las imágenes */
+  width: 100%;
+}
+
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--space-24);
+}
+
+/* R2: Título Playfair 600 40/50 px, negro, máx. 372 px */
+.promo__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-cta);
+  line-height: 1.25; /* 50px / 40px */
+  color: var(--color-espresso);
+  max-width: 372px;
+}
+
+/* R3: Botón pill --color-espresso, 258x51 px */
+.promo__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  width: 258px;
+  height: 51px;
+  background-color: var(--color-espresso);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.promo__btn:hover,
+.promo__btn:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Ícono chevron */
+.promo__btn-chevrons {
+  display: flex;
+  align-items: center;
+  margin-left: -4px;
+}
+
+.promo__btn-chevrons img:nth-child(2) {
+  margin-left: -10px; /* Superpone levemente el segundo chevron */
+}

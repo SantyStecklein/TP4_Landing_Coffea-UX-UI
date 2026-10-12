@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Fase 3: Adaptación Responsiva (Sección 7)
+   ========================================================================== */
+
+/* Prevención global de desbordamiento horizontal */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoint LG (Tablet Landscape / Laptop chica) - max 1024px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --container: calc(100% - 2 * 48px); /* Container fluid lg */
+  }
+
+  /* Header: Colapso a menú hamburguesa (Ocultar nav completo por simplicidad sin JS) */
+  .header__nav {
+    display: none; 
+  }
+
+  /* Hero: Ajuste de textos */
+  .hero__container {
+    padding-top: 150px;
+    padding-inline: 48px;
+  }
+  .hero__content {
+    max-width: 100%;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .hero__bg {
+    object-position: center right;
+  }
+
+  /* Promo: Centrar texto y ocultar imágenes laterales en tablets (iPad, Surface) para evitar superposición */
+  .promo__container {
+    justify-content: center;
+    padding-left: 0;
+  }
+  .promo__img {
+    display: none;
+  }
+
+  /* Testimonios: Reducir de 3 a 2 tarjetas visibles */
+  .testimonials__grid {
+    flex-wrap: wrap;
+  }
+  .testimonial-card,
+  .testimonial-card--featured {
+    width: 45%;
+    transform: none; /* Quitamos el scale destacado */
+    min-height: auto;
+  }
+
+  /* Footer: Romper a 3 columnas */
+  .footer__container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .footer__brand {
+    width: 100%;
+    margin-bottom: var(--space-24);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoint MD (Tablet Portrait) - max 768px
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --container: calc(100% - 2 * 32px); /* Container fluid md */
+  }
+
+  /* Categorías: 4 en fila -> Grid 2x2 */
+  .categories {
+    height: auto;
+    padding-block: var(--space-40);
+  }
+  .categories__list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: var(--space-40) 0;
+  }
+  .categories__item {
+    width: 45%;
+  }
+
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoint BASE (Mobile) - max 767px
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --container: calc(100% - 2 * 16px); /* Container fluid base */
+    --fs-hero: clamp(2rem, 10vw, 3rem); /* Escalado fluido para mobile: min 32px, max 48px */
+    --fs-h2: 1.5rem;
+    --fs-cta: 2rem;
+  }
+
+  /* Header: Reducir padding en mobile */
+  .header {
+    top: 20px;
+  }
+  .header__container {
+    padding-inline: 16px; /* Asegurar que el logo no quede pegado al borde */
+  }
+
+  /* Hero: Reducir altura (Alto auto) */
+  .hero {
+    min-height: auto;
+    max-height: none;
+    padding-bottom: 80px;
+  }
+  .hero__container {
+    padding-inline: 16px; /* Alinear el texto del hero con el container general */
+  }
+  .hero__title {
+    margin-bottom: var(--space-24);
+  }
+
+  /* Testimonios: 1 sola card con scroll horizontal (snap) */
+  .testimonials__grid {
+    width: 100%; /* FIX: previene expansión de flexbox */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+  .testimonials__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .testimonial-card,
+  .testimonial-card--featured {
+    width: 85%; /* Se asoma la siguiente */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  /* Newsletter: Input y botón apilados (ancho completo) */
+  .newsletter__form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter__input-wrapper,
+  .newsletter__btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  .newsletter__img {
+    display: none; /* Ocultar granos en mobile */
+  }
+
+  /* Footer: Columnas apiladas (2x2 para links) */
+  .footer__container {
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Corrección de Overflow y Carrusel (Mobile / Tablet)
+   -------------------------------------------------------------------------- */
+
+/* Prevención global de desbordamiento horizontal en pantallas pequeñas */
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  /* Ocultar flechas para usar swipe nativo táctil */
+  .carousel__arrow {
+    display: none;
+  }
+  
+  /* Forzar al contenedor a no exceder el ancho de la pantalla */
+  .carousel__track {
+    width: 100%;
+    padding-inline: var(--space-16); /* Margen para que la tarjeta no quede pegada al borde */
+  }
+  
+  /* Reducir el tamaño de la tarjeta para móviles */
+  .product-card {
+    width: 280px !important; 
+    flex: 0 0 280px !important;
+  }
+  .product-card__img {
+    height: 280px; /* Reducir altura proporcionalmente */
+  }
+}

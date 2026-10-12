@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Componente: Header (Sección 5.1)
+   ========================================================================== */
+
+/* R4: Posicionado absoluto sobre el hero, a 55px del borde superior */
+.header {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Alineación dentro del contenedor de 1444px */
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* R1: Logo "coffea" en Playfair 700, 32px (--fs-logo), minúsculas, blanco */
+.header__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-logo);
+  color: var(--color-white);
+  text-transform: lowercase;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-40);
+  list-style: none;
+}
+
+/* R2: Links Poppins 500, 18px (--fs-md), uppercase, blanco */
+.header__nav-link {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  color: var(--color-white);
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus-visible {
+  opacity: 0.8;
+}
+
+/* R2: "login" en peso 600 */
+.header__nav-link--login {
+  font-weight: 600;
+}
+
+/* R3: Botón de búsqueda circular blanco de 61 px */
+.header__search-btn {
+  width: 61px;
+  height: 61px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header__search-btn:hover,
+.header__search-btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+/* Forzar tamaño y centrado absoluto del SVG dentro del botón */
+.header__search-btn img {
+  width: 32px !important; /* Aumentado ligeramente para mejor visibilidad */
+  height: 32px !important;
+  object-fit: contain;
+  display: block;
+  margin: auto; /* Fuerza el centrado si flexbox falla */
+}

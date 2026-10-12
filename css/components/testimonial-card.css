@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Componente: Testimonios (Sección 5.7)
+   ========================================================================== */
+
+.testimonials {
+  padding-block: var(--space-56);
+  background-color: var(--color-bg);
+}
+
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* R1: Encabezado doble */
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.testimonials__eyebrow {
+  display: block;
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: var(--fs-logo); /* 32px */
+  color: var(--color-espresso);
+  margin-bottom: var(--space-8);
+}
+
+.testimonials__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-logo); /* 32px */
+  text-transform: uppercase;
+  color: var(--color-espresso);
+}
+
+/* Grilla para las 3 tarjetas */
+.testimonials__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 85px !important; /* Fuerza absolutamente el espaciado entre tarjetas según Figma */
+  margin-bottom: 48px;
+  width: 100%;
+  max-width: 1600px; /* Asegura que el contenedor tenga suficiente espacio para las 3 tarjetas + los 85px de gap */
+}
+
+/* R2: Tarjeta base (Laterales 417x207px) */
+.testimonial-card {
+  width: 417px;
+  min-height: 207px;
+  background-color: var(--color-sand-40);
+  border: 2px solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  transition: transform 0.3s ease;
+}
+
+/* R2: Tarjeta Central Destacada (441x235px) */
+.testimonial-card--featured {
+  width: 441px;
+  min-height: 235px;
+  /* Eliminado background-color para que mantenga el mismo color que las demás (sand-40) */
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(48, 38, 28, 0.05);
+}
+
+/* R3: Contenido de la tarjeta */
+.testimonial-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.testimonial-card__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--color-espresso);
+}
+
+.testimonial-card__role {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  color: var(--color-text-soft);
+}
+
+.testimonial-card__rating {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.testimonial-card__quote p {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-xs); /* 12/20px */
+  line-height: 1.66;
+  color: var(--color-espresso);
+}
+
+/* R4: Paginador */
+.testimonials__pagination {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.testimonials__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-text-soft); /* Oscurecido para que coincida con Figma */
+  transition: background-color 0.2s ease;
+}
+
+.testimonials__dot--active {
+  background-color: var(--color-espresso); /* Negro/marrón oscuro */
+}
+
+/* Utilidad para estrellas vacías en testimonios */
+.star--empty {
+  opacity: 0.3;
+  filter: grayscale(1);
+}

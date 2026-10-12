@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Componente: Hero (Sección 5.2)
+   ========================================================================== */
+
+/* R1: Alto 1000 px en desktop con tope */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 1000px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* R1: Fondo = imagen del espresso con object-fit: cover alineada a la derecha */
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: -1;
+}
+
+/* R2: A 238px del borde izq (cubierto por el .container centrado de 1444px) y 294px del superior */
+.hero__container {
+  position: relative;
+  z-index: 1;
+  padding-top: 294px;
+}
+
+/* R2: Bloque de texto de 557 px de ancho */
+.hero__content {
+  max-width: 557px;
+}
+
+/* R3: Eyebrow WELCOME */
+.hero__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-white);
+  margin-bottom: 40px;
+}
+
+/* R3: H1 Playfair 700 72/82 px */
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-hero);
+  line-height: 1.138; /* 82px / 72px */
+  color: var(--color-white);
+  margin-bottom: 56px;
+}
+
+/* R3: Párrafo Outfit 400 18/26 px, máx 431 px */
+.hero__description {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-md);
+  line-height: 1.444; /* 26px / 18px */
+  color: var(--color-white);
+  max-width: 431px;
+  margin-bottom: 56px;
+}
+
+/* R4: Botón Order Now */
+.hero__btn {
+  display: inline-block;
+  background-color: var(--color-white);
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  padding: 16px 40px;
+  border-radius: var(--radius-pill);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Interacción de hover */
+.hero__btn:hover,
+.hero__btn:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}

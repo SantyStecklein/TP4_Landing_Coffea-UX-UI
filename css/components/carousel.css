@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Componente: Carrusel y Títulos de Productos (Secciones 5.4 y 5.5)
+   ========================================================================== */
+
+.products {
+  padding-block: var(--space-56);
+}
+
+/* R1: Título H2 centrado, Playfair 600 32px uppercase */
+.products__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  text-transform: uppercase;
+  letter-spacing: 1.28px;
+  color: var(--color-espresso);
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/* R2: Carrusel centrado en la pantalla completa */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1800px; /* Expandimos el contenedor principal casi al total de la pantalla para que las flechas tengan lugar de sobra */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Separación garantizada entre el track y las flechas */
+}
+
+/* El track que contiene las tarjetas */
+.carousel__track {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1560px; /* (366 * 4) + (24 * 3) = 1536px + 24px de padding = 1560px exactos */
+  padding: 20px 12px; /* Padding vertical para no cortar sombras, horizontal sutil */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+/* Evita que los hijos directos (las tarjetas) se encojan o estiren */
+.carousel__track > * {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* R3: Flechas circulares */
+.carousel__arrow {
+  width: 71px;
+  height: 71px;
+  flex-shrink: 0;
+  cursor: pointer;
+  background-color: var(--color-sand);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin-inline: 9px;
+}
+
+.carousel__arrow:hover,
+.carousel__arrow:focus-visible {
+  transform: scale(1.1);
+  background-color: var(--color-sand-40);
+}
+
+/* Blindar la tarjeta de producto contra estiramientos flexbox */
+.product-card {
+  width: 366px;
+  flex: 0 0 auto; /* No crecer, no encoger, tamaño automático basado en width */
+}
+
+/* Forzar que la imagen del producto mantenga su proporción y no se estire */
+.product-card__img {
+  width: 100%;
+  height: 364px; /* Alto fijo según Figma */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+  border-radius: var(--radius-img);
+}
