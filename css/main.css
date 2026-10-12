@@ -13,4 +13,4 @@
 @import url("./components/newsletter.css") layer(components);
 @import url("./components/footer.css") layer(components);
 @import url("./utilities.css") layer(utilities);
-@import url('components/responsive.css');
+@import url("components/responsive.css") layer(components);
