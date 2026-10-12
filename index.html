@@ -6,6 +6,23 @@
   <title>Coffea | Landing Page</title>
   <meta name="description" content="Coffea - We serve the richest coffee in the city. Explore our special coffee beans, bakery, and desserts.">
   <meta name="theme-color" content="#30261C">
+  
+  <!-- Preloads para paralelizar la descarga y evitar render-blocking de @imports -->
+  <link rel="preload" href="css/tokens.css" as="style">
+  <link rel="preload" href="css/base.css" as="style">
+  <link rel="preload" href="css/layout.css" as="style">
+  <link rel="preload" href="css/components/header.css" as="style">
+  <link rel="preload" href="css/components/hero.css" as="style">
+  <link rel="preload" href="css/components/categories.css" as="style">
+  <link rel="preload" href="css/components/product-card.css" as="style">
+  <link rel="preload" href="css/components/carousel.css" as="style">
+  <link rel="preload" href="css/components/promo.css" as="style">
+  <link rel="preload" href="css/components/testimonial-card.css" as="style">
+  <link rel="preload" href="css/components/newsletter.css" as="style">
+  <link rel="preload" href="css/components/footer.css" as="style">
+  <link rel="preload" href="css/utilities.css" as="style">
+  <link rel="preload" href="css/components/responsive.css" as="style">
+  
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -26,14 +43,14 @@
       </nav>
 
       <button type="button" class="header__search-btn" aria-label="Buscar">
-        <img src="assets/icons/search.svg" alt="" width="24" height="24">
+        <img src="assets/icons/search.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
       </button>
     </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <!-- R1: Imagen con object-fit -->
-      <img src="assets/img/hero.avif" alt="" class="hero__bg">
+      <img src="assets/img/hero.avif" alt="" class="hero__bg" width="1920" height="1000" fetchpriority="high">
       
       <div class="container hero__container">
         <div class="hero__content">
@@ -54,25 +71,25 @@
         <ul class="categories__list">
           <li class="categories__item">
             <a href="#coffee" class="categories__link">
-              <img src="assets/icons/cat-1.svg" alt="" class="categories__icon" width="82" height="82">
+              <img src="assets/icons/cat-1.svg" alt="" class="categories__icon" width="82" height="82" loading="lazy" decoding="async">
               <span class="categories__label">Hot Coffee</span>
             </a>
           </li>
           <li class="categories__item">
             <a href="#coffee" class="categories__link">
-              <img src="assets/icons/cat-2.svg" alt="" class="categories__icon" width="82" height="82">
+              <img src="assets/icons/cat-2.svg" alt="" class="categories__icon" width="82" height="82" loading="lazy" decoding="async">
               <span class="categories__label">Cold Coffee</span>
             </a>
           </li>
           <li class="categories__item">
             <a href="#coffee" class="categories__link">
-              <img src="assets/icons/cat-3.svg" alt="" class="categories__icon" width="82" height="82">
+              <img src="assets/icons/cat-3.svg" alt="" class="categories__icon" width="82" height="82" loading="lazy" decoding="async">
               <span class="categories__label">Cup Coffee</span>
             </a>
           </li>
           <li class="categories__item">
             <a href="#dessert" class="categories__link">
-              <img src="assets/icons/cat-4.svg" alt="" class="categories__icon" width="82" height="82">
+              <img src="assets/icons/cat-4.svg" alt="" class="categories__icon" width="82" height="82" loading="lazy" decoding="async">
               <span class="categories__label">Dessert</span>
             </a>
           </li>
@@ -83,15 +100,15 @@
       <h2 id="coffee-title" class="products__title">OUR SPECIAL COFFEE</h2>
       <div class="carousel">
         <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Anterior">
-          <img src="assets/icons/arrow.svg" alt="">
+          <img src="assets/icons/arrow.svg" alt="" width="71" height="71" loading="lazy" decoding="async">
         </button>
         <div class="carousel__track">
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/coffee-1.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/coffee-1.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -103,10 +120,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/coffee-2.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/coffee-2.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -118,10 +135,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/coffee-3.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/coffee-3.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -133,10 +150,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/coffee-4.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/coffee-4.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -148,7 +165,7 @@
           </article>
         </div>
         <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Siguiente">
-          <img src="assets/icons/arrow.svg" alt="" style="transform: scaleX(-1);">
+          <img src="assets/icons/arrow.svg" alt="" width="71" height="71" loading="lazy" decoding="async" style="transform: scaleX(-1);">
         </button>
       </div>
     </section>
@@ -156,15 +173,15 @@
       <h2 id="dessert-title" class="products__title">OUR SPECIAL DESSERT</h2>
       <div class="carousel">
         <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Anterior">
-          <img src="assets/icons/arrow.svg" alt="">
+          <img src="assets/icons/arrow.svg" alt="" width="71" height="71" loading="lazy" decoding="async">
         </button>
         <div class="carousel__track">
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/dessert-1.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/dessert-1.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -176,10 +193,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/dessert-2.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/dessert-2.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -191,10 +208,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/dessert-3.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/dessert-3.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -206,10 +223,10 @@
           </article>
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="assets/img/dessert-4.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364">
+              <img src="assets/img/dessert-4.avif" alt="Lungo coffee" class="product-card__img" width="334" height="364" loading="lazy" decoding="async">
               <label class="product-card__fav">
                 <input type="checkbox" class="visually-hidden">
-                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon">
+                <img src="assets/icons/heart.svg" alt="Favorito" class="product-card__fav-icon" width="33" height="33" loading="lazy" decoding="async">
               </label>
             </div>
             <h3 class="product-card__title">Lungo coffee</h3>
@@ -221,14 +238,14 @@
           </article>
         </div>
         <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Siguiente">
-          <img src="assets/icons/arrow.svg" alt="" style="transform: scaleX(-1);">
+          <img src="assets/icons/arrow.svg" alt="" width="71" height="71" loading="lazy" decoding="async" style="transform: scaleX(-1);">
         </button>
       </div>
     </section>
     <section class="promo" aria-labelledby="promo-title">
       <!-- R1: Imágenes decorativas laterales -->
-      <img src="assets/img/promo-hand.avif" alt="" class="promo__img promo__img--left">
-      <img src="assets/img/promo-beans.avif" alt="" class="promo__img promo__img--right">
+      <img src="assets/img/promo-hand.avif" alt="" class="promo__img promo__img--left" width="520" height="335" loading="lazy" decoding="async">
+      <img src="assets/img/promo-beans.avif" alt="" class="promo__img promo__img--right" width="520" height="335" loading="lazy" decoding="async">
       
       <div class="container promo__container">
         <div class="promo__content">
@@ -239,8 +256,8 @@
           <a href="#shop" class="promo__btn">
             Explore Our Products
             <div class="promo__btn-chevrons">
-              <img src="assets/icons/chevron.svg" alt="" class="promo__btn-icon" width="20" height="20">
-              <img src="assets/icons/chevron.svg" alt="" class="promo__btn-icon" width="20" height="20">
+              <img src="assets/icons/chevron.svg" alt="" class="promo__btn-icon" width="20" height="20" loading="lazy" decoding="async">
+              <img src="assets/icons/chevron.svg" alt="" class="promo__btn-icon" width="20" height="20" loading="lazy" decoding="async">
             </div>
           </a>
         </div>
@@ -259,17 +276,17 @@
           <!-- Tarjeta 1 (4 estrellas) -->
           <figure class="testimonial-card">
             <figcaption class="testimonial-card__header">
-              <img src="assets/img/avatar-1.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56">
+              <img src="assets/img/avatar-1.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56" loading="lazy" decoding="async">
               <div class="testimonial-card__meta">
                 <span class="testimonial-card__name">James Smith</span>
                 <span class="testimonial-card__role">Entrepreneur</span>
               </div>
               <div class="testimonial-card__rating" aria-label="4 de 5 estrellas">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty" loading="lazy" decoding="async">
               </div>
             </figcaption>
             <blockquote class="testimonial-card__quote">
@@ -280,17 +297,17 @@
           <!-- Tarjeta 2 Destacada (5 estrellas) -->
           <figure class="testimonial-card testimonial-card--featured">
             <figcaption class="testimonial-card__header">
-              <img src="assets/img/avatar-2.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56">
+              <img src="assets/img/avatar-2.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56" loading="lazy" decoding="async">
               <div class="testimonial-card__meta">
                 <span class="testimonial-card__name">James Smith</span>
                 <span class="testimonial-card__role">Entrepreneur</span>
               </div>
               <div class="testimonial-card__rating" aria-label="5 de 5 estrellas">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
               </div>
             </figcaption>
             <blockquote class="testimonial-card__quote">
@@ -301,17 +318,17 @@
           <!-- Tarjeta 3 (3 estrellas) -->
           <figure class="testimonial-card">
             <figcaption class="testimonial-card__header">
-              <img src="assets/img/avatar-3.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56">
+              <img src="assets/img/avatar-3.avif" alt="James Smith" class="testimonial-card__avatar" width="56" height="56" loading="lazy" decoding="async">
               <div class="testimonial-card__meta">
                 <span class="testimonial-card__name">James Smith</span>
                 <span class="testimonial-card__role">Entrepreneur</span>
               </div>
               <div class="testimonial-card__rating" aria-label="3 de 5 estrellas">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty">
-                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty" loading="lazy" decoding="async">
+                <img src="assets/icons/star.svg" alt="" width="15" height="15" class="star--empty" loading="lazy" decoding="async">
               </div>
             </figcaption>
             <blockquote class="testimonial-card__quote">
@@ -330,8 +347,8 @@
       </div>
     </section>
     <section class="newsletter" aria-labelledby="newsletter-title">
-      <img src="assets/img/newsletter-beans.avif" alt="" class="newsletter__img newsletter__img--left">
-      <img src="assets/img/newsletter-beans.avif" alt="" class="newsletter__img newsletter__img--right">
+      <img src="assets/img/newsletter-beans.avif" alt="" class="newsletter__img newsletter__img--left" width="520" height="335" loading="lazy" decoding="async">
+      <img src="assets/img/newsletter-beans.avif" alt="" class="newsletter__img newsletter__img--right" width="520" height="335" loading="lazy" decoding="async">
       
       <div class="container newsletter__container">
         <h2 id="newsletter-title" class="newsletter__title">Join in and ger 15% off!</h2>
@@ -340,7 +357,7 @@
         <form class="newsletter__form" action="#" method="POST">
           <label for="newsletter-email" class="visually-hidden">Email address</label>
           <div class="newsletter__input-wrapper">
-            <img src="assets/icons/mail.svg" alt="" class="newsletter__icon" width="20" height="20">
+            <img src="assets/icons/mail.svg" alt="" class="newsletter__icon" width="20" height="20" loading="lazy" decoding="async">
             <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Email address" required>
           </div>
           <button type="submit" class="newsletter__btn">Subscribe</button>
@@ -401,16 +418,16 @@
         <h3 class="footer__title">SOCIAL MEDIA</h3>
         <div class="footer__socials" aria-label="Redes sociales">
           <a href="#" class="footer__social-link" aria-label="X">
-            <img src="assets/icons/social-1.svg" alt="" width="24" height="24">
+            <img src="assets/icons/social-1.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
           </a>
           <a href="#" class="footer__social-link" aria-label="Instagram">
-            <img src="assets/icons/social-2.svg" alt="" width="24" height="24">
+            <img src="assets/icons/social-2.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
           </a>
           <a href="#" class="footer__social-link" aria-label="Facebook">
-            <img src="assets/icons/social-3.svg" alt="" width="24" height="24">
+            <img src="assets/icons/social-3.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
           </a>
           <a href="#" class="footer__social-link" aria-label="LinkedIn">
-            <img src="assets/icons/social-4.svg" alt="" width="24" height="24">
+            <img src="assets/icons/social-4.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
