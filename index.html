@@ -37,22 +37,17 @@
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <!-- R1: Imagen con object-fit optimizada mediante <picture> -->
-      <picture>
+      <!-- R1: Imagen con object-fit optimizada -->
+      <picture class="hero__bg-wrapper">
         <source media="(max-width: 767px)" srcset="assets/img/hero.avif">
         <img src="assets/img/hero.avif" alt="" class="hero__bg" width="1920" height="1000" fetchpriority="high">
       </picture>
-      
+
       <div class="container hero__container">
         <div class="hero__content">
-          <!-- R3: Eyebrow WELCOME -->
           <span class="hero__eyebrow">WELCOME</span>
-          
           <h1 id="hero-title" class="hero__title">We serve the richest coffee in the city!</h1>
-          
           <p class="hero__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-          
-          <!-- R4: Botón Order Now -->
           <a href="#coffee" class="hero__btn">Order Now</a>
         </div>
       </div>
