@@ -40,6 +40,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  min-width: 0;
 }
 
 /* Evita que los hijos directos (las tarjetas) se encojan o estiren */

@@ -2,11 +2,17 @@
    Fase 3: Adaptación Responsiva (Sección 7)
    ========================================================================== */
 
+/* ==========================================================================
+   Fase 3: Adaptación Responsiva (Sección 7)
+   ========================================================================== */
+
 /* Prevención global de desbordamiento horizontal */
 html, body {
   overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
