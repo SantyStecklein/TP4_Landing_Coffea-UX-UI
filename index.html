@@ -6,12 +6,23 @@
   <title>Coffea | Landing Page</title>
   <meta name="description" content="Coffea - We serve the richest coffee in the city. Explore our special coffee beans, bakery, and desserts.">
   <meta name="theme-color" content="#30261C">
+  <!-- Preloads para paralelizar la descarga y evitar render-blocking de @imports -->
+  <link rel="preload" href="css/tokens.css" as="style">
+  <link rel="preload" href="css/base.css" as="style">
+  <link rel="preload" href="css/layout.css" as="style">
+  <link rel="preload" href="css/components/header.css" as="style">
+  <link rel="preload" href="css/components/hero.css" as="style">
+  <link rel="preload" href="css/components/categories.css" as="style">
+  <link rel="preload" href="css/components/product-card.css" as="style">
+  <link rel="preload" href="css/components/carousel.css" as="style">
+  <link rel="preload" href="css/components/promo.css" as="style">
+  <link rel="preload" href="css/components/testimonial-card.css" as="style">
+  <link rel="preload" href="css/components/newsletter.css" as="style">
+  <link rel="preload" href="css/components/footer.css" as="style">
+  <link rel="preload" href="css/utilities.css" as="style">
+  <link rel="preload" href="css/components/responsive.css" as="style">
   
-  <link rel="preload" as="font" href="assets/fonts/playfair-display-700.woff2" type="font/woff2" crossorigin>
-
-  <!-- Carga optimizada de CSS no bloqueante para mobile performance -->
-  <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
