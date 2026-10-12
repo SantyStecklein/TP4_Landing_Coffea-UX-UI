@@ -2,8 +2,23 @@
    Design Tokens - Coffea Landing Page
    ========================================================================== */
 
-/* Importación de fuentes optimizada (Google Fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&family=Reggae+One&display=swap');
+/* Playfair Display */
+@font-face { font-family: 'Playfair Display'; src: url('../assets/fonts/playfair-display-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('../assets/fonts/playfair-display-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('../assets/fonts/playfair-display-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+/* Outfit */
+@font-face { font-family: 'Outfit'; src: url('../assets/fonts/outfit-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Outfit'; src: url('../assets/fonts/outfit-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Outfit'; src: url('../assets/fonts/outfit-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+
+/* Poppins */
+@font-face { font-family: 'Poppins'; src: url('../assets/fonts/poppins-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../assets/fonts/poppins-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../assets/fonts/poppins-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+
+/* Reggae One */
+@font-face { font-family: 'Reggae One'; src: url('../assets/fonts/reggae-one-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
 
 :root {
   /* Colores */
