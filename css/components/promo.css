@@ -6,7 +6,8 @@
 .promo {
   position: relative;
   background-color: var(--color-sand);
-  height: 335px;
+  min-height: 335px; /* Reemplazo clave para evitar desborde */
+  padding-block: var(--space-48, 3rem); /* Respiro interno flexible */
   display: flex;
   align-items: center;
   overflow: hidden; /* Evita desbordes de las imágenes laterales absolutas */
